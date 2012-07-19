@@ -9,10 +9,12 @@
 #import "MainMenu.h"
 #import "ResourceDownloader.h"
 #import "ConnectionHandler.h"
+#import "UserProfile.h"
+#import "ProfileList.h"
 
 @implementation MainMenu
 
-@synthesize lavatar, challenges, messages, bazaar, wq, imageView, nume, puncte, bani, level;
+@synthesize lavatar, challenges, messages, bazaar, wq, imageView, nume, puncte, bani, level, mo;
 
 static MainMenu *i;
 
@@ -66,21 +68,29 @@ static MainMenu *i;
     NSString *iurl = [ConnectionHandler userInfoAPI];
     NSString *authKey = [@"?user=" stringByAppendingString:[ConnectionHandler username]];
     NSString *ss = [iurl stringByAppendingString:authKey];
-    NSDictionary *dic = [ConnectionHandler getJSONURL: ss];
-    
-    NSLog(@"%@", dic);
-    if(dic == nil) {
+    UserProfile *up = [UserProfile getFromDictionary:[ConnectionHandler getJSONURL:ss]];
+    if(up == nil) {
         [self logout];
         UIAlertView *view = [[UIAlertView alloc] initWithTitle:@"Invalid username/password!" message:@"Please try again" delegate:self cancelButtonTitle:@"Back" otherButtonTitles: nil];
         [view show];
         [view release];
         return;
     }
-    [[ResourceDownloader getInstance] handleImage:lavatar fromURL:[dic objectForKey:@"avatar"]];    
-    self.nume.text = [dic objectForKey:@"last_name"];
-    self.level.text = [[dic objectForKey: @"level"] objectForKey:@"title"];
-    self.puncte.text = [NSString stringWithFormat:@"%@",[dic objectForKey:@"points"]];
-    self.bani.text = [NSString stringWithFormat:@"%@",[dic objectForKey:@"gold"]];
+    [[ResourceDownloader getInstance] handleImage:lavatar fromURL:up.avatar];    
+    self.nume.text = up.lastName;
+    self.level.text = up.levelTitle;
+    self.puncte.text = [NSString stringWithFormat:@"%@",up.points];
+    self.bani.text = [NSString stringWithFormat:@"%@",up.gold];
+}
+
+- (void) logoTouched:(UIButton *)sender
+{
+    [self logout];
+}
+
+- (void) avatarTouched: (UIButton *) sender
+{
+    [self.navigationController pushViewController:[[ProfileList alloc] init] animated:YES];
 }
 
 - (void)viewDidUnload

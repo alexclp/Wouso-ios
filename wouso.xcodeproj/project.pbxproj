@@ -37,6 +37,10 @@
 		E70C11D515B6A71D0040CFEB /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = E70C11C815B6A71D0040CFEB /* SBJsonUTF8Stream.m */; };
 		E70C11D615B6A71D0040CFEB /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = E70C11CA15B6A71D0040CFEB /* SBJsonWriter.m */; };
 		E70C11D915B6DD440040CFEB /* ResourceDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = E70C11D815B6DD440040CFEB /* ResourceDownloader.m */; };
+		E70C11DF15B7F2410040CFEB /* avataroverlay.png in Resources */ = {isa = PBXBuildFile; fileRef = E70C11DE15B7F2410040CFEB /* avataroverlay.png */; };
+		E70C11E415B7F37A0040CFEB /* UserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = E70C11E315B7F37A0040CFEB /* UserProfile.m */; };
+		E70C11EE15B810870040CFEB /* ProfileList.m in Sources */ = {isa = PBXBuildFile; fileRef = E70C11EC15B810870040CFEB /* ProfileList.m */; };
+		E70C11EF15B810870040CFEB /* ProfileList.xib in Resources */ = {isa = PBXBuildFile; fileRef = E70C11ED15B810870040CFEB /* ProfileList.xib */; };
 		E7DEE0AC15B014490065F31E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7DEE0AB15B014480065F31E /* UIKit.framework */; };
 		E7DEE0AE15B014490065F31E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7DEE0AD15B014490065F31E /* Foundation.framework */; };
 		E7DEE0B015B014490065F31E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7DEE0AF15B014490065F31E /* CoreGraphics.framework */; };
@@ -116,6 +120,12 @@
 		E70C11CA15B6A71D0040CFEB /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		E70C11D715B6DD440040CFEB /* ResourceDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResourceDownloader.h; sourceTree = "<group>"; };
 		E70C11D815B6DD440040CFEB /* ResourceDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResourceDownloader.m; sourceTree = "<group>"; };
+		E70C11DE15B7F2410040CFEB /* avataroverlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avataroverlay.png; sourceTree = "<group>"; };
+		E70C11E215B7F37A0040CFEB /* UserProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfile.h; sourceTree = "<group>"; };
+		E70C11E315B7F37A0040CFEB /* UserProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfile.m; sourceTree = "<group>"; };
+		E70C11EB15B810870040CFEB /* ProfileList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileList.h; sourceTree = "<group>"; };
+		E70C11EC15B810870040CFEB /* ProfileList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileList.m; sourceTree = "<group>"; };
+		E70C11ED15B810870040CFEB /* ProfileList.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileList.xib; sourceTree = "<group>"; };
 		E7DEE0A715B014480065F31E /* wouso.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wouso.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7DEE0AB15B014480065F31E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E7DEE0AD15B014490065F31E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -192,6 +202,7 @@
 		E70C116815B43DC40040CFEB /* menu */ = {
 			isa = PBXGroup;
 			children = (
+				E70C11E115B7F3640040CFEB /* profiles */,
 				E70C116915B43DD90040CFEB /* MainMenu.h */,
 				E70C116A15B43DD90040CFEB /* MainMenu.m */,
 				E70C116B15B43DD90040CFEB /* MainMenu.xib */,
@@ -232,6 +243,25 @@
 			name = json;
 			sourceTree = "<group>";
 		};
+		E70C11E115B7F3640040CFEB /* profiles */ = {
+			isa = PBXGroup;
+			children = (
+				E70C11EB15B810870040CFEB /* ProfileList.h */,
+				E70C11EC15B810870040CFEB /* ProfileList.m */,
+				E70C11ED15B810870040CFEB /* ProfileList.xib */,
+			);
+			name = profiles;
+			sourceTree = "<group>";
+		};
+		E70C11EA15B810340040CFEB /* util */ = {
+			isa = PBXGroup;
+			children = (
+				E70C11E315B7F37A0040CFEB /* UserProfile.m */,
+				E70C11E215B7F37A0040CFEB /* UserProfile.h */,
+			);
+			name = util;
+			sourceTree = "<group>";
+		};
 		E7DEE09C15B014480065F31E = {
 			isa = PBXGroup;
 			children = (
@@ -267,6 +297,7 @@
 		E7DEE0B115B014490065F31E /* wouso */ = {
 			isa = PBXGroup;
 			children = (
+				E70C11EA15B810340040CFEB /* util */,
 				E70C11B015B6A7060040CFEB /* json */,
 				E70C116815B43DC40040CFEB /* menu */,
 				E7DEE0EB15B035A40065F31E /* network */,
@@ -297,6 +328,7 @@
 		E7DEE0CB15B014E30065F31E /* res */ = {
 			isa = PBXGroup;
 			children = (
+				E70C11DE15B7F2410040CFEB /* avataroverlay.png */,
 				E70C11AE15B6A2F00040CFEB /* points.png */,
 				E70C11AC15B6A2C60040CFEB /* gold.png */,
 				E70C11AA15B6A1E70040CFEB /* levelex.png */,
@@ -400,6 +432,8 @@
 				E70C11AB15B6A1E70040CFEB /* levelex.png in Resources */,
 				E70C11AD15B6A2C60040CFEB /* gold.png in Resources */,
 				E70C11AF15B6A2F00040CFEB /* points.png in Resources */,
+				E70C11DF15B7F2410040CFEB /* avataroverlay.png in Resources */,
+				E70C11EF15B810870040CFEB /* ProfileList.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +472,8 @@
 				E70C11D515B6A71D0040CFEB /* SBJsonUTF8Stream.m in Sources */,
 				E70C11D615B6A71D0040CFEB /* SBJsonWriter.m in Sources */,
 				E70C11D915B6DD440040CFEB /* ResourceDownloader.m in Sources */,
+				E70C11E415B7F37A0040CFEB /* UserProfile.m in Sources */,
+				E70C11EE15B810870040CFEB /* ProfileList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

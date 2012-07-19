@@ -2,7 +2,7 @@
 
 @interface ResourceDownloader : NSObject
 
--(void) handleImage: (UIImageView *) img fromURL: (NSString *) url;
+-(void) handleImage: (UIButton *) img fromURL: (NSString *) url;
 -(void) updateImage: (NSString *) surl;
 -(void) blah;
 +(ResourceDownloader *) getInstance;

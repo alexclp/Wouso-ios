@@ -20,7 +20,7 @@ static ResourceDownloader *i;
     return  ret;
 }
 
-- (void) handleImage: (UIImageView *) img fromURL: (NSString *) url
+- (void) handleImage: (UIButton *) img fromURL: (NSString *) url
 {
     if(dictionary == nil) 
         dictionary = [[NSMutableDictionary alloc] init];
@@ -28,7 +28,7 @@ static ResourceDownloader *i;
         waiting = [[NSMutableDictionary alloc] init];
     UIImage *image = [dictionary objectForKey:url];
     if(image != nil) {
-        img.image = image;
+        [img setImage: image forState:UIControlStateNormal];
         return;
     }
     [waiting setValue:img forKey:url];
@@ -37,8 +37,10 @@ static ResourceDownloader *i;
 
 - (void) updateImage: (NSString *) surl
 {
-    UIImageView *img = [waiting objectForKey:surl];
-    img.image = [dictionary objectForKey:surl];
+    UIButton *img = [waiting objectForKey:surl];
+    img.contentHorizontalAlignment = UIControlContentHorizontalAlignmentFill;
+    img.contentVerticalAlignment = UIControlContentVerticalAlignmentFill;
+    [img setImage: [dictionary objectForKey:surl] forState:UIControlStateNormal];
 }
 
 - (void) blah

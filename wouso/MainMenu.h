@@ -10,16 +10,22 @@
 
 @interface MainMenu : UIViewController
 {
-    IBOutlet UIButton *challenges, *messages, *bazaar, *wq;
-    IBOutlet UIImageView *imageView, *lavatar;
+    IBOutlet UIButton *challenges, *messages, *bazaar, *wq, *mo, *lavatar;
+    IBOutlet UIImageView *imageView;
     IBOutlet UILabel *nume, *puncte, *bani, *level;
 }
 
-@property (retain) IBOutlet UIButton *challenges, *messages, *bazaar, *wq;
-@property (retain) IBOutlet UIImageView *imageView, *lavatar;
+@property (retain) IBOutlet UIButton *challenges, *messages, *bazaar, *wq, *mo, *lavatar;
+@property (retain) IBOutlet UIImageView *imageView;
 @property (retain) IBOutlet UILabel *nume, *puncte, *bani, *level;
 
 -(void) logout;
 +(void) show: (UINavigationController *) control;
+
+
+
+-(IBAction)logoTouched: (UIButton *) sender;
+-(IBAction)avatarTouched:(UIButton *) sender;
+
 
 @end
